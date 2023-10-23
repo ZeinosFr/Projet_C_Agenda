@@ -1,6 +1,4 @@
-"C:\Program Files\JetBrains\CLion 2022.3.3\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Program Files/JetBrains/CLion 2022.3.3/bin/ninja/win/x64/ninja.exe" -G Ninja -S C:\Users\damie\OneDrive\Documents\GitHub\Projet_C_Agenda -B C:\Users\damie\OneDrive\Documents\GitHub\Projet_C_Agenda\cmake-build-debug
-CMake Error at CMakeLists.txt:1 (cmake_minimum_required):
-  CMake 3.25 or higher is required.  You are running version 3.24.2
-
-
--- Configuring incomplete, errors occurred!
+"C:\Program Files\JetBrains\CLion 2023.1.1\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Program Files/JetBrains/CLion 2023.1.1/bin/ninja/win/x64/ninja.exe" -G Ninja -S C:\Users\Kenny\CLionProjects\Projet_Agenda -B C:\Users\Kenny\CLionProjects\Projet_Agenda\cmake-build-debug
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/Users/Kenny/CLionProjects/Projet_Agenda/cmake-build-debug
