@@ -39,4 +39,12 @@ t_sk_cell createSkCell(int val,int level){
     //Ligne struct s_sk_cell à définir ?
     return p;
 }
+//Je crois c'est faux donc a vérifier (createSklistempty)
+void createSklistempty(int level_max){
+    t_sk_list p;
+    p.max_level = level_max;
+    p.heads.level = NULL;
+// comment faire pour dire que la suite est NULL ?
+
+}
 #endif //UNTITLED4_MAIN_H
