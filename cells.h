@@ -30,5 +30,8 @@ typedef struct s_sk_list{
 
 t_sk_cell *createSkCell(int val,int level); //Création de la cellule
 
+t_sk_list *initialiser_liste_a_niveaux(int n);
+
+void afficher_liste_a_niveaux(t_sk_list *liste_a_niveaux);
 
 #endif //UNTITLED4_CELLS_H

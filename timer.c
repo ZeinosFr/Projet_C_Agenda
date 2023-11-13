@@ -6,7 +6,7 @@
 #include <malloc.h>
 #include "timer.h"
 
-// start the timer
+// start the timerz
 void startTimer()
 {
     _timer._start = clock();

@@ -1,3 +1,0 @@
-C:/Users/Kenny/CLionProjects/Projet_Agenda/cmake-build-debug/CMakeFiles/untitled4.dir
-C:/Users/Kenny/CLionProjects/Projet_Agenda/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/Kenny/CLionProjects/Projet_Agenda/cmake-build-debug/CMakeFiles/rebuild_cache.dir
