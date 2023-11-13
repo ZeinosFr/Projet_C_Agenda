@@ -1,6 +1,8 @@
 
 #ifndef UNTITLED4_CELLS_H
 #define UNTITLED4_CELLS_H
+//A voir si utile
+
 typedef struct s_d_cell
 {
     int value;
@@ -13,7 +15,7 @@ typedef struct s_d_list
     t_d_cell *head_0;
     t_d_cell *head_1;
 } t_d_list;
-
+//
 typedef struct s_sk_cell{
     int value;
     int level;
@@ -21,12 +23,12 @@ typedef struct s_sk_cell{
 }t_sk_cell;
 
 typedef struct s_sk_list{
-    t_sk_cell heads;
+    t_sk_cell *heads;
     int max_level;
 }t_sk_list;
 
 
-t_sk_cell createSkCell(int val,int level); //Création de la cellule
+t_sk_cell *createSkCell(int val,int level); //Création de la cellule
 
 
 #endif //UNTITLED4_CELLS_H

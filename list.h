@@ -2,10 +2,10 @@
 #define UNTITLED4_LIST_H
 #include "cells.h"
 
-t_d_list *createList(int max_levels);
-void insertCell(t_d_list *list, t_d_cell *cell, int level);
-void displayListLevel(t_d_list *list, int level);
-void displayAllLevels(t_d_list *list);
-void insertSorted(t_d_list *list, t_d_cell *cell);
+t_sk_list *createList(int max_level);
+void insertCell(t_sk_list *list, t_sk_cell *cell);
+void displayListLevel(t_sk_list *list, int level);
+void displayAllLevels(t_sk_list *list);
+void insertSorted(t_sk_list *list, t_sk_cell *cell);
 
 #endif //UNTITLED4_LIST_H
