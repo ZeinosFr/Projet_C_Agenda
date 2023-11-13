@@ -61,6 +61,18 @@ build CMakeFiles/untitled4.dir/timer.c.obj: C_COMPILER__untitled4_Debug C$:/User
   OBJECT_DIR = CMakeFiles\untitled4.dir
   OBJECT_FILE_DIR = CMakeFiles\untitled4.dir
 
+build CMakeFiles/untitled4.dir/cells.c.obj: C_COMPILER__untitled4_Debug C$:/Users/Kenny/CLionProjects/Projet_Agenda/cells.c || cmake_object_order_depends_target_untitled4
+  DEP_FILE = CMakeFiles\untitled4.dir\cells.c.obj.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu11
+  OBJECT_DIR = CMakeFiles\untitled4.dir
+  OBJECT_FILE_DIR = CMakeFiles\untitled4.dir
+
+build CMakeFiles/untitled4.dir/list.c.obj: C_COMPILER__untitled4_Debug C$:/Users/Kenny/CLionProjects/Projet_Agenda/list.c || cmake_object_order_depends_target_untitled4
+  DEP_FILE = CMakeFiles\untitled4.dir\list.c.obj.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu11
+  OBJECT_DIR = CMakeFiles\untitled4.dir
+  OBJECT_FILE_DIR = CMakeFiles\untitled4.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target untitled4
@@ -69,7 +81,7 @@ build CMakeFiles/untitled4.dir/timer.c.obj: C_COMPILER__untitled4_Debug C$:/User
 #############################################
 # Link the executable untitled4.exe
 
-build untitled4.exe: C_EXECUTABLE_LINKER__untitled4_Debug CMakeFiles/untitled4.dir/main.c.obj CMakeFiles/untitled4.dir/timer.c.obj
+build untitled4.exe: C_EXECUTABLE_LINKER__untitled4_Debug CMakeFiles/untitled4.dir/main.c.obj CMakeFiles/untitled4.dir/timer.c.obj CMakeFiles/untitled4.dir/cells.c.obj CMakeFiles/untitled4.dir/list.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\untitled4.dir
