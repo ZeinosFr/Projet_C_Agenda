@@ -21,7 +21,7 @@ int main() {
     // Display levels
     // Mesurer le temps pour 1000 recherches avec une valeur aléatoire
     int numSearches = 1000;
-    int randomValue = 2;// Valeur aléatoire entre 1 et 8
+    int randomValue = 16;// Valeur aléatoire entre 1 et 8
     measureSearchTime(ma_liste_a_niveaux, randomValue, numSearches);
 
 
