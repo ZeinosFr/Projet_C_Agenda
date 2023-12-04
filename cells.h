@@ -33,5 +33,6 @@ t_sk_cell *createSkCell(int val,int level); //Création de la cellule
 t_sk_list *initialiser_liste_a_niveaux(int n);
 
 void afficher_liste_a_niveaux(t_sk_list *liste_a_niveaux);
-
+t_sk_cell *searchLevel0(t_sk_list *list, int value);
+t_sk_cell *searchFromTopLevel(t_sk_list *list, int value);
 #endif //UNTITLED4_CELLS_H

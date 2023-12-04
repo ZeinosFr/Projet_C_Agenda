@@ -53,7 +53,22 @@ void displayAllLevels(t_sk_list *list){
 }
 
 //Optionnel : Afficher tous les niveaux de la liste, en alignant les cellules
-void insertSorted(t_sk_list *list, t_sk_cell *cell);
+void insertSorted(t_sk_list *list, t_sk_cell *cell) {
+    for (int i = 0; i < list->max_level; i++) {
+        // Trouver la position d'insertion au niveau i
+        t_sk_cell *prev = &list->heads[i];
+        t_sk_cell *current = prev->next[i];
+
+        while (current != NULL && current->value < cell->value) {
+            prev = current;
+            current = current->next[i];
+        }
+
+        // Insérer la cellule au niveau i
+        cell->next[i] = current;
+        prev->next[i] = cell;
+    }
+}
 
 
 

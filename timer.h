@@ -4,7 +4,7 @@
 
 #ifndef UNTITLED1_TIMER_H
 #define UNTITLED1_TIMER_H
-
+#include "cells.h"
 #include <time.h>
 
 // timer structure
@@ -44,5 +44,5 @@ void displayTime();
  * @return a string with the time in seconds and milliseconds
  */
 char *getTimeAsString();
-
+void measureSearchTime(t_sk_list *list, int value, int numSearches);
 #endif //UNTITLED1_TIMER_H

@@ -5,8 +5,9 @@
 #include <stdio.h>
 #include <malloc.h>
 #include "timer.h"
+#include "cells.h"
 
-// start the timerz
+// start the timer
 void startTimer()
 {
     _timer._start = clock();
@@ -42,4 +43,27 @@ char *getTimeAsString()
 
     // return the buffer
     return buffer;
+}
+
+void measureSearchTime(t_sk_list *list, int value, int numSearches) {
+    clock_t start, end;
+    double cpu_time_used;
+
+    // Mesurer le temps pour la recherche dans le niveau 0
+    start = clock();
+    for (int i = 0; i < numSearches; i++) {
+        searchLevel0(list, value);
+    }
+    end = clock();
+    cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
+    printf("Search in Level 0 Time: %f seconds\n", cpu_time_used);
+
+    // Mesurer le temps pour la recherche à partir du niveau le plus haut
+    start = clock();
+    for (int i = 0; i < numSearches; i++) {
+        searchFromTopLevel(list, value);
+    }
+    end = clock();
+    cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
+    printf("Search from Top Level Time: %f seconds\n", cpu_time_used);
 }
