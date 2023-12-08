@@ -44,5 +44,5 @@ void displayTime();
  * @return a string with the time in seconds and milliseconds
  */
 char *getTimeAsString();
-void measureSearchTime(t_sk_list *list, int value, int numSearches);
+void measureAndLogTime();
 #endif //UNTITLED1_TIMER_H

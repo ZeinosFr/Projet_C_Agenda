@@ -39,31 +39,46 @@ char *getTimeAsString()
     // use sprintf to write the string in a dynamically allocated buffer
     char *buffer = (char *)malloc(10*sizeof(char));
     // use sprintf to write the string in a dynamically allocated buffer
-    sprintf(buffer, "[%g] %03d,%03d", _timer._msecs, (int)(_timer._msecs)/1000, (int)(_timer._msecs)%1000);
+    sprintf(buffer, "%03d,%03d", (int)(_timer._msecs)/1000, (int)(_timer._msecs)%1000);
 
     // return the buffer
     return buffer;
 }
 
-void measureSearchTime(t_sk_list *list, int value, int numSearches) {
-    clock_t start, end;
-    double cpu_time_used;
+void measureAndLogTime() {
+    FILE *log_file = fopen("log.txt", "w");
+    char format[] = "%d\t%s\t%s\n" ;
+    int initial_level = 7;
+    int final_level = 16;
+    int numSearches = 10000;
+    for (int level = initial_level; level <= final_level; level++) {
+        // Initialiser la liste à niveaux
+        t_sk_list *maListe = initialiser_liste_a_niveaux(level);
 
-    // Mesurer le temps pour la recherche dans le niveau 0
-    start = clock();
-    for (int i = 0; i < numSearches; i++) {
-        searchLevel0(list, value);
-    }
-    end = clock();
-    cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    printf("Search in Level 0 Time: %f seconds\n", cpu_time_used);
+        // Mesurer le temps pour la recherche dans le niveau 0
+        startTimer();
 
-    // Mesurer le temps pour la recherche à partir du niveau le plus haut
-    start = clock();
-    for (int i = 0; i < numSearches; i++) {
-        searchFromTopLevel(list, value);
+        for (int i = 0; i < numSearches; i++) {
+            searchLevel0(maListe, rand() % (1 << level));
+        }
+        stopTimer();
+        char *time_lvl0 = getTimeAsString();
+
+        // Mesurer le temps pour la recherche multi-niveaux
+        startTimer();
+        for (int i = 0; i < numSearches; i++) {
+            searchFromTopLevel(maListe, rand() % (1 << level));
+        }
+        stopTimer();
+        char *time_all_levels = getTimeAsString();
+
+        // Afficher les résultats
+        printf("%d %s %s\n", level, time_lvl0, time_all_levels);
+
+        // Écrire les résultats dans le fichier de log
+        fprintf(log_file,format,level,time_lvl0, time_all_levels);
+
     }
-    end = clock();
-    cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    printf("Search from Top Level Time: %f seconds\n", cpu_time_used);
+
+    fclose(log_file);
 }
